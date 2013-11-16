@@ -1,0 +1,8 @@
+<h1>Stores!</h1>
+<% @stores['result'].each do |store| %>
+  <%= link_to store['name'], store_path(store['id']) %><br />
+  <% end %>
+<br /><br />
+  Page <%= @stores['pager']['current_page'] %> of <%= @stores['pager']['final_page'] %><br /><br />
+<a href="<%= @stores['pager']['previous_page_path'] %>">Previous page</a> | 
+<a href="<%= @stores['pager']['next_page_path'] %>">Next page</a>

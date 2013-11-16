@@ -1,4 +1,18 @@
-<h1>Products#show</h1>
-<% @product['result'].each do |k, v| %>
-<%= k %> = <%= v %><br />
+<h1><%= @product['result']['name'] %></h1>
+<img src="<%= @product['result']['image_url'] %>" width=200px><br />
+  $<%= format_price(@product['result']['price_in_cents']) %> for <%= @product['result']['total_package_units'] %> x <%= @product['result']['package_unit_volume_in_milliliters'] %> mL <%= @product['result']['package_unit_type'] %><br />
+<h3>Available at the following locations:</h3>
+<table border="1">
+  <tr>
+    <td><strong>Location</strong></td>
+    <td><strong>Quantity</strong></td>
+  </tr>
+<% @locations['result'].each do |loc| %>
+<td><%= loc['name'] %></td>
+<td><%= loc['quantity'] %></td>
+</tr>
 <% end %>
+</table>
+<br />
+<%= link_to "Back to products", products_path %>
+

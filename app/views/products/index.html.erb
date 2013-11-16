@@ -1,8 +1,13 @@
-<h1>LCBO Product</h1>
+<h1>Welcome to the LCBO</h1>
+<h2><%= link_to "Stores", stores_path %></h2>
+<h2>Products</h2>
 <% @products['result'].each do |product| %>
 <section>
   <%= link_to product['name'], product_path(product['id']) %>
   <%= format_price(product['price_in_cents']) %>
   <%= product['primary_category'] %>
 </section>
-<% end %>
+<% end %><br /><br />
+Page <%= @products['pager']['current_page'] %> of <%= @products['pager']['final_page'] %><br /><br />
+<a href="<%= @products['pager']['previous_page_path'] %>">Previous page</a> | 
+<a href="<%= @products['pager']['next_page_path'] %>">Next page</a>
