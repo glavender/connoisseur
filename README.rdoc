@@ -1,3 +1,3 @@
 == README
 
-This is a Rails app that grabs products from the LCBO (Liquor Control Board of Ontario) API. It parses the JSON and presents the products in a more attractive manner.
+This is a Rails app that grabs products from the LCBO (Liquor Control Board of Ontario) API, created as part of the Bitmaker Labs program. It parses the JSON and presents the products in a more attractive manner.
